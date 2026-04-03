@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苍井空免费TG代理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tgblue: '#0088cc',
+                        tgalternate: '#00fbff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root { --transition-speed: 0.5s; }
+        body { 
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            overflow-x: hidden;
+            padding-top: 60px; /* 为跑马灯预留空间 */
+        }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+
+        /* --- 抄过来的跑马灯样式 --- */
+        .marquee-ad {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        
+        .marquee-ad a {
+            background: linear-gradient(90deg, #f72585, #4361ee, #4cc9f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* --- 抄过来的音乐控制器样式 --- */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .music-control i { color: #fff; font-size: 18px; }
+        .music-control .pause-icon { display: none; }
+        .music-control.playing .pause-icon { display: block; }
+        .music-control.playing .play-icon { display: none; }
+        .music-control:hover { transform: scale(1.1); background: rgba(255, 255, 255, 0.2); }
+
+        /* 原有 UI 样式 */
+        .bg-glow {
+            position: fixed; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(0, 136, 204, 0.2) 0%, transparent 70%);
+            border-radius: 50%; filter: blur(80px); z-index: 0;
+            animation: move 20s infinite alternate; pointer-events: none;
+        }
+        @keyframes move { 0% { transform: translate(-20%, -20%); } 100% { transform: translate(40%, 40%); } }
+        .glass-card {
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .proxy-node { transition: all 0.3s ease; }
+        .proxy-node:hover { transform: scale(1.02); background: rgba(0, 136, 204, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white min-h-screen py-12 px-6 flex flex-col items-center">
+    
+    <div class="marquee-ad">
+        <a href="https://t.me/fuchenyouzaibot" target="_blank">苍井空免费TG代理 https://t.me/fuchenyouzaibot </a>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="https://lv-sycdn.kuwo.cn/0048364fe6885166379337ca155716f0/69cfd2f3/resource/30106/trackmedia/M5000024LyrQ2U0SV6.mp3?bitrate$128&from=vip" type="audio/mpeg">
+    </audio>
+
+    <div class="bg-glow"></div>
+
+    <button id="theme-toggle" onclick="toggleTheme()" class="fixed top-20 right-6 z-50 w-12 h-12 rounded-full bg-white/20 dark:bg-black/20 border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-lg hover:scale-110 active:scale-90 transition-all">
+        <i class="fas fa-sun text-yellow-400 text-xl hidden dark:block"></i>
+        <i class="fas fa-moon text-blue-400 text-xl dark:hidden"></i>
+    </button>
+
+    <div class="relative z-10 w-full max-w-xl">
+        <div class="text-center mb-10">
+            <div class="inline-block p-5 rounded-[2.5rem] bg-tgblue/10 dark:bg-white/5 mb-4 ring-1 ring-tgblue/20 dark:ring-white/10 shadow-xl">
+                <i class="fab fa-telegram-plane text-5xl text-tgblue animate-bounce"></i>
+            </div>
+            <h1 class="text-4xl font-black tracking-tight mb-2">苍井空免费TG代理 </h1>
+            <p class="text-slate-500 dark:text-slate-400 text-xs tracking-[0.3em] uppercase font-bold">手速过快容易撸秃噜皮</p>
+        </div>
+
+        <div class="glass-card bg-white/70 dark:bg-white/5 rounded-[3rem] p-6 md:p-10 border border-white/20 dark:border-white/10 shadow-2xl">
+            <div class="flex items-center justify-between mb-8 px-2">
+                <div class="text-left">
+                    <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Cluster Nodes</p>
+                    <p class="text-emerald-500 font-bold flex items-center gap-2">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                        ⚡一键直连苍井空免费TG代理  点击后跳转至 打开外部应用 打开 
+                    </p>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Status</p>
+                    <p class="font-black text-tgblue uppercase text-sm italic">✅苍井空免费TG代理 在线代理 撸起袖子加油撸 </p>
+                </div>
+            </div>
+
+            <div class="space-y-4" id="proxy-list"></div>
+
+            <div class="mt-10 pt-8 border-t border-slate-200 dark:border-white/5 flex justify-around opacity-50">
+                <div class="text-center"><p class="text-[9px] font-bold">苍井空免费TG代理  </p></div>
+                <div class="text-center"><p class="text-[9px] font-bold">不撸啊撸容易憋坏了</p></div>
+                <div class="text-center"><p class="text-[9px] font-bold">撸啊撸使劲撸</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="music-control" id="music-control">
+        <i class="fas fa-music play-icon"></i>
+        <i class="fas fa-pause pause-icon"></i>
+    </div>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 opacity-0 transition-all duration-300 pointer-events-none translate-y-10 z-[999]">
+        <div class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-3 font-bold">
+            <i class="fas fa-check-circle text-emerald-500 text-lg"></i>
+            <span>苍井空免费TG代理 配置已复制，正在启动 Telegram</span>
+        </div>
+    </div>
+
+    <script>
+        const proxies = [
+            "tg://socks?server=143.14.105.121&port=5555&user=hanbaocloud&pass=hanbaocloud",
+            "tg://socks?server=47.254.240.76&port=5555&user=socks5&pass=socks5",
+            "tg://socks?server=47.239.202.242&port=6666&user=6666&pass=6666",
+            "tg://socks?server=43.100.106.246&port=2222&user=2222&pass=2222",
+            "tg://socks?server=47.83.174.84&port=6666&user=6666&pass=6666",
+            "tg://socks?server=47.83.186.60&port=5555&user=5555&pass=5555",
+            "tg://socks?server=47.83.8.104&port=6666&user=6666&pass=6666",
+            "tg://socks?server=43.100.106.218&port=2222&user=2222&pass=2222",
+            "tg://socks?server=47.83.1.61&port=5555&user=5555&pass=5555",
+            "tg://socks?server=47.83.174.84&port=6666&user=6666&pass=6666",
+            "tg://socks?server=47.83.186.60&port=5555&user=5555&pass=5555",
+            "https://t.me/proxy?server=172.245.43.220&port=29016&secret=ee485e0f7a31cbf2ad6c37e3c64b7e37bf6974756e65732e6170706c652e636f6d",
+            "https://t.me/proxy?server=38.76.141.24&port=41740&secret=feff39bcddb62859ade093fcad935858",
+            "https://t.me/proxy?server=43.201.253.200&port=443&secret=ee946813f69c59ae11ed707ee41c4ec052617a7572652e6d6963726f736f66742e636f6d",
+            "https://t.me/proxy?server=185.132.53.40&port=443&secret=eeb529712465e5236f2d78e719643e784e6974756e65732e6170706c652e636f6d",
+            "https://t.me/proxy?server=156.229.167.23&port=443&secret=ee9862086cfc818ac6a34ce62ea67e0b666974756e65732e6170706c652e636f6d",
+             "https://t.me/proxy?server=143.14.105.10&port=35982&secret=ee35a3bde2621183655e5bb12b39c793bc6974756e65732e6170706c652e636f6d",
+            "https://t.me/socks?server=8.217.170.160&port=42763",
+            "https://t.me/socks?server=8.217.84.188&port=1080&user=123456&pass=123456",
+            "https://t.me/socks?server=192.168.3.4&port=9125&user=youzai&pass=TG%40fuchenyouzaibot",
+            "https://t.me/socks?server=127.0.0.1&port=9125&user=youzai&pass=youzai%3ATG%40fuchenyouzaibot",
+             "https://t.me/socks?server=192.168.3.4&port=9527&user=youzai&pass=TG%40fuchenyouzaibot"
+        ];
+
+        function renderNodes() {
+            const list = document.getElementById('proxy-list');
+            list.innerHTML = proxies.map((url, i) => {
+                const params = new URLSearchParams(url.split('?')[1]);
+                return `
+                    <div class="proxy-node bg-slate-100/50 dark:bg-black/30 rounded-2xl p-4 border border-slate-200 dark:border-white/5 flex items-center justify-between group cursor-pointer" onclick="connect('${url}')">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-[9px] text-slate-400 mb-0.5 font-bold uppercase tracking-tighter italic">节点 0${i+1} / Premium</p>
+                            <p class="text-base font-mono font-bold truncate text-slate-700 dark:text-blue-200">${params.get('server')}:${params.get('port')}</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-xl bg-tgblue text-white flex items-center justify-center shadow-lg shadow-tgblue/20">
+                            <i class="fas fa-bolt text-xs"></i>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function connect(url) {
+            navigator.clipboard.writeText(url);
+            const toast = document.getElementById('toast');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                window.location.href = url;
+            }, 600);
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // --- 音乐播放逻辑 ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('background-music');
+            const musicControl = document.getElementById('music-control');
+            music.volume = 0.5;
+
+            function playMusic() {
+                music.play().then(() => {
+                    musicControl.classList.add('playing');
+                }).catch(() => {
+                    console.log("等待交互播放");
+                });
+            }
+
+            // 初始尝试
+            playMusic();
+
+            // 点击页面任何地方开始播放（浏览器安全策略）
+            document.addEventListener('click', function() {
+                if(music.paused) playMusic();
+            }, { once: true });
+
+            musicControl.addEventListener('click', function(e) {
+                e.stopPropagation(); // 防止触发上面的 document 点击事件
+                if (music.paused) {
+                    music.play();
+                    musicControl.classList.add('playing');
+                } else {
+                    music.pause();
+                    musicControl.classList.remove('playing');
+                }
+            });
+        });
+
+        renderNodes();
+    </script>
+</body>
+</html>
